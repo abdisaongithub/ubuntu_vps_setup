@@ -1,21 +1,16 @@
 sudo apt update
 sudo apt upgrade
 # install and start ssh service
-sudo apt install openssh-server
+sudo apt install -y openssh-server
 sudo systemctl restart ssh
+
 # install nginx
-sudo apt install nginx
+sudo apt install -y nginx
+systemctl start nginx
+# install curl
+sudo apt install -y curl
 
-sudo apt install curl 
-curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
-source ~/.bashrc
-nvm install --lts
+# install mysql
+apt install -y mysql-server
+systemctl start mysql.service
 
-# install pm2
-npm install pm2 --location=global
-apt install php8.1
-# clone your repository/generate a sample project
-# npm install express-generator --location=global
-
-# install dependecies
-# npm ci
